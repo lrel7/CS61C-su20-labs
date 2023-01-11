@@ -1,0 +1,58 @@
+Exercise 1
+	Scenario 1
+		1. Because the step size in bytes(32 bytes) is exactly equal to the cache size in bytes.
+		2. Still 0, because the step size doesn't change, so every time it accesses the same block.
+		3. Change step size to 1
+
+	Scenario 2
+		1. 2(read & write)
+		2. miss, hit, hit, hit
+		3. hit rate = 75% 
+		4. The hit rate will aprroach to 1, because all the data which will be accessed have been cached.
+		5. The size of the array exactly equals to the size of cazhe(256 bytes)
+			We should try to access 256 bytes of the array at a time and apply all of the functions to that
+			256 bytes, so we can be completely done with it before moving on, thereby keeping that 256 bytes
+			hot in the cache and not having to circle back to it later on!
+
+	Scenario 3
+		1. L1:0.5, L2:0, Overall:0.5
+		2. 32; 16
+		3. 16; they are all missed by L1
+		4. the block size of L2, so that it can cache more data at once
+		5. increase the # of blocks:no affects to both
+		   increase L1 block size:L1 HR increases, L2 HR remains the same, so that it can cache more data at once
+
+Exercise 2
+	ijk: 1.900 Gflop/s
+	ikj: 0.167 Gflop/s
+	jik: 1.962 Gflop/s
+	jki: 14.019 Gflop/s
+	kij: 0.176 Gflop/s
+	kji: 11.851 Gflop/s
+
+	1. jki & kji performs the best
+		because their average stride is the smallest
+	2. ikj & kij performs the worst
+		because their average stride is the largest
+	3. the smaller the stride is, the better the performance is
+
+Exercise 3
+	(I run my code in ubuntu 22.04, but the time seems very strange.)
+	Part 1
+		blocksize = 20, n = 100: 
+		blocksize = 20, n = 1000: 
+		blocksize = 20, n = 2000: 
+		blocksize = 20, n = 5000: 
+		blocksize = 20, n = 10000: 
+
+		1.
+		2.
+
+	Part 2
+		blocksize = 50, n = 10000:
+		blocksize = 100, n = 10000:
+		blocksize = 500, n = 10000:
+		blocksize = 1000, n = 10000:
+		blocksize = 5000, n = 10000:
+
+		1.
