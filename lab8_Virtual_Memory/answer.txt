@@ -1,0 +1,19 @@
+Exercise 1
+1. 2^5=32bytes
+2. 3 TLB hits, 7 TLB misses, 0 page hits, 7 page faults
+3. No. Because the TLB covers all the physical page number I need.
+4. The virtual address is divided into 2 parts : the first 3 bits for page number, and the rest 5 bits for offset.
+	We first look up in the TLB, if TLB hits, then we are done. Otherwise, we go to the page table.
+	If the valid bit is 1, then we are done. Otherwise we get a page fault.
+	Then we need to find a free physical page, and update the TLB & page table.
+
+Exercise 2
+00 20 40 60 80 A0 C0 E0 00 20
+Everytime access a different page.
+
+Exercise 3
+Increase the memory size, so that even if TLB misses, still have a chance to go to the physical memory and get a page hit.
+
+Exercise 4
+P1, P2, P3, P4 are processes.This simulation reports a much higher percentage of TLB misses, because each time it switches
+between processes, TLB will be cleared.
